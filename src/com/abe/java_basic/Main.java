@@ -1,20 +1,19 @@
 package com.abe.java_basic;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
-import com.abe.java_basic.ref.Student;
+import com.abe.java_basic.text3_8.Hero;
 
 public class Main {
-	public static void main(String args[]) throws InterruptedException {
+	public static void main(String[] args) {
+		List<Hero> heros = new ArrayList<>();
+		heros.add(new Hero("Saito"));
+		heros.add(new Hero("Suzuki"));
 
-		List<String> names = Arrays.asList("Abe", "Tanaka", "Kamemoto");
-		
-		List<Student> students = names.stream()
-									.map(Student::new)
-									.toList();
-		
-		System.out.println(students);
+		for (Hero h : heros) {
+			System.out.println(h.getName());
+		}
 	}
 
 }
